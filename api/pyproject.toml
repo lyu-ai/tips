@@ -2,9 +2,11 @@
 authors = ["Hugh Lv <hugh.lv@gmail.com>"]
 description = "Perception Service for Humanoid Robotics"
 name = "tips"
-package-mode = false
 packages = [
-  {include = "src", from = "."},
+  {include = "api", from = "src"},
+  {include = "services", from = "src"},
+  {include = "websocket", from = "src"},
+  {include = "models", from = "src"},
 ]
 readme = "README.md"
 version = "0.1.0"
@@ -25,8 +27,8 @@ torch = "^2.4.1"
 torchaudio = "^2.4.1" 
 torchvision = "^0.19.1" 
 transformers = "^4.44.2" 
+uvicorn = {extras = ["standard"], version = "^0.30.6"} 
 websocket-server = "^0.6.4" # You could replace this with `websockets` or `uvicorn`
-uvicorn = {extras = ["standard"], version = "^0.30.6"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
