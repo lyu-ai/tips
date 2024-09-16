@@ -1,0 +1,44 @@
+[tool.poetry]
+authors = ["Hugh Lv <hugh.lv@gmail.com>"]
+description = "Perception Service for Humanoid Robotics"
+name = "tips"
+package-mode = false
+packages = [
+  {include = "src", from = "."},
+]
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.scripts]
+start-api = "main:main"
+
+[tool.poetry.dependencies]
+fastapi = "^0.114.2" 
+librosa = "^0.10.2.post1" 
+mypy = "^1.11.2" 
+opencv-python = "^4.10.0.84" 
+pydub = "^0.25.1" 
+pytest = "^8.3.3" 
+python = "^3.12" 
+python-multipart = "^0.0.9" 
+torch = "^2.4.1" 
+torchaudio = "^2.4.1" 
+torchvision = "^0.19.1" 
+transformers = "^4.44.2" 
+websocket-server = "^0.6.4" # You could replace this with `websockets` or `uvicorn`
+uvicorn = {extras = ["standard"], version = "^0.30.6"}
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+flake8 = "^7.1.1"
+isort = "^5.10.1"
+
+[tool.mypy]
+ignore_missing_imports = false
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[virtualenvs]
+in-project = true
