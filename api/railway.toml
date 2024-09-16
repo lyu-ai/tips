@@ -1,6 +1,0 @@
-[services]
-[services.websocket]
-build = "Dockerfile"
-start = "poetry run python websocket_server.py"
-env = "production"
-port = 8842
